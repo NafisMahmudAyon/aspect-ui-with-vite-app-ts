@@ -18,7 +18,7 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 .logo.aspect-ui:hover {
-  filter: drop-shadow(0 0 2em ##221e44aa);
+  filter: drop-shadow(0 0 2em #221e44aa);
 }
 
 @keyframes logo-spin {
