@@ -10,10 +10,10 @@ interface CircularProgressBarProps
   onVisible?: boolean
   /**
    * Duration of the progress bar in seconds
-   * 
+   *
    * Default value is 2 seconds
    */
-  duration?: number;
+  duration?: number
   strokeColor?: string
   strokeFillColor?: string
   strokeWidth?: number
@@ -83,7 +83,7 @@ export const CircularProgressBar: React.FC<CircularProgressBarProps> = ({
 
   return (
     <div
-      className={cn("relative size-24", className)}
+      className={cn('relative size-24', className)}
       onClick={onClick}
       role='progressbar'
       {...rest}
@@ -126,7 +126,7 @@ export const CircularProgressBar: React.FC<CircularProgressBarProps> = ({
           />
         </svg>
         <span
-          className={`${contentClassName} absolute inset-0 flex h-full w-full rotate-90 items-center justify-center text-text`}
+          className={`${contentClassName} text-text absolute inset-0 flex h-full w-full rotate-90 items-center justify-center`}
         >
           {!children && !hideValue && <>{percentage}%</>}
           {children && <>{children}</>}

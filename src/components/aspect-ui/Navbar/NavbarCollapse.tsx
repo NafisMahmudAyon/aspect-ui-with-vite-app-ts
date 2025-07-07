@@ -6,10 +6,12 @@ import { forwardRef, HTMLAttributes } from 'react'
 import { cn } from '../../utils/cn'
 import { useNavbar } from './NavbarContext'
 
-
 type NavbarCollapseProps = HTMLAttributes<HTMLDivElement> & MotionProps
 
-export const NavbarCollapseComponent = forwardRef<HTMLDivElement, NavbarCollapseProps>(({ children, className, ...rest }, ref) => {
+export const NavbarCollapseComponent = forwardRef<
+  HTMLDivElement,
+  NavbarCollapseProps
+>(({ children, className, ...rest }, ref) => {
   const { isCollapsed } = useNavbar()
 
   return (
@@ -23,11 +25,10 @@ export const NavbarCollapseComponent = forwardRef<HTMLDivElement, NavbarCollapse
           ref={ref}
           {...rest}
           className={cn(
-            `absolute left-0 right-0 top-full z-[1000] bg-bg p-4 rounded-md rounded-t-none border border-border shadow-md ${isCollapsed ? 'hidden' : 'flex flex-col'}`,
+            `bg-bg border-border absolute left-0 right-0 top-full z-[1000] rounded-md rounded-t-none border p-4 shadow-md ${isCollapsed ? 'hidden' : 'flex flex-col'}`,
             className
           )}
         >
-
           {children}
         </motion.div>
       )}

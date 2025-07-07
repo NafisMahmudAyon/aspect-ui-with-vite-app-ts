@@ -17,10 +17,7 @@ export const TableCell: React.FC<TableCellProps> = ({
 }) => {
   return (
     <td
-      className={cn(
-        "p-2 align-middle whitespace-nowrap text-sm",
-        className
-      )}
+      className={cn('whitespace-nowrap p-2 align-middle text-sm', className)}
       colSpan={colSpan}
       {...rest}
     >
