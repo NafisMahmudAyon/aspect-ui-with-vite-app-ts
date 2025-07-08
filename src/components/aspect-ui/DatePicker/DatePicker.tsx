@@ -41,7 +41,7 @@ export const DatePicker: React.FC<DatePickerProps> = ({
   const [selectedDates, setSelectedDates] = useState<Date[]>(
     initialDates.map(date => new Date(date))
   )
-  // const [isOpen, setIsOpen] = useState(show)
+
   const [years, setYears] = useState<number[]>([])
 
   const monthNames = [

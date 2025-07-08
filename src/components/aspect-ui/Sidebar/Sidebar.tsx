@@ -40,7 +40,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
   return (
     <aside
       className={cn(
-        'bg-bg fixed left-0 top-0 z-40 h-screen w-64 flex-col p-5 transition-all duration-300 ease-in-out',
+        'bg-bg fixed top-0 left-0 z-40 h-screen w-64 flex-col p-5 transition-all duration-300 ease-in-out',
         breakpointStyle(breakPoint),
         isOpen ? 'translate-x-0' : '-translate-x-full',
         className
