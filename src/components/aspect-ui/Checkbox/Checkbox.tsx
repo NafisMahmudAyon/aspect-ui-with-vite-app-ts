@@ -52,9 +52,8 @@ export const Checkbox: React.FC<CheckboxProps> = ({
 
   return (
     <label
-      className={`text-text flex cursor-pointer select-none items-center gap-3 transition-all duration-200 ${
-        disabled && 'pointer-events-none opacity-50'
-      } ${className} `}
+      className={`text-text flex cursor-pointer items-center gap-3 transition-all duration-200 select-none ${disabled && 'pointer-events-none opacity-50'
+        } ${className} `}
     >
       <div className='relative'>
         <input
@@ -70,7 +69,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
             variantClasses[variant],
             'flex items-center justify-center border transition-all duration-200 ease-in-out',
             checked
-              ? 'bg-bg-light border-bg-light shadow-md'
+              ? 'bg-primary text-bg-light border-primary shadow-md'
               : 'border-border bg-transparent',
             checkboxClassName
           )}

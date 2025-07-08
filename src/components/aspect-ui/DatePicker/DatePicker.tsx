@@ -172,21 +172,11 @@ export const DatePicker: React.FC<DatePickerProps> = ({
       <Popover>
         <PopoverAction
           className={cn(
-            'border-border bg-bg outline-hidden focus-visible:outlined w-full rounded-md border px-4 py-2',
+            'border-border bg-bg focus-visible:outlined w-full rounded-md border px-4 py-2 outline-hidden',
             className
           )}
         >
-          {/* <span
-            // type='text'
-            className={cn('w-full rounded-md border border-border px-4 py-2 bg-bg outline-hidden focus-visible:outlined', className)}
-            // readOnly
-            // value={formatDateRange(selectedDates)}
-            // onClick={() => setIsOpen(!isOpen)}
-            // placeholder={placeholder}
-            {...rest}
-          > */}
           {formatDateRange(selectedDates)}
-          {/* </span> */}
         </PopoverAction>
         <PopoverContent className='w-auto p-0'>
           <div
@@ -298,7 +288,7 @@ export const DatePicker: React.FC<DatePickerProps> = ({
               </button>
             </div>
             <div className='grid grid-cols-[repeat(7,minmax(2rem,1fr))] gap-1'>
-              <div className='border-border col-start-1 col-end-8 grid grid-cols-[repeat(7,minmax(2rem,1fr))] gap-1 border-b border-t'>
+              <div className='border-border col-start-1 col-end-8 grid grid-cols-[repeat(7,minmax(2rem,1fr))] gap-1 border-t border-b'>
                 {['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'].map(day => (
                   <div
                     key={day}
@@ -320,23 +310,23 @@ export const DatePicker: React.FC<DatePickerProps> = ({
                         ? 'rounded-md'
                         : '',
                     !date && 'invisible',
-                    date && 'hover:bg-bg-light',
+                    date && 'hover:bg-primary hover:text-bg-light',
                     date &&
-                      date.getDate() === currentDate.getDate() &&
-                      ((isRange && selectedDates.length < 2) ||
-                        (!isRange && selectedDates.length === 0)) &&
-                      'bg-bg-light',
+                    date.getDate() === currentDate.getDate() &&
+                    ((isRange && selectedDates.length < 2) ||
+                      (!isRange && selectedDates.length === 0)) &&
+                    'bg-bg-light',
                     date &&
-                      selectedDates.some(
-                        d => d.toDateString() === date.toDateString()
-                      ) &&
-                      'bg-primary text-primary-foreground',
+                    selectedDates.some(
+                      d => d.toDateString() === date.toDateString()
+                    ) &&
+                    'bg-primary text-bg-light',
                     date &&
-                      isRange &&
-                      selectedDates.length === 2 &&
-                      date > selectedDates[0] &&
-                      date < selectedDates[1] &&
-                      'bg-primary text-primary-foreground'
+                    isRange &&
+                    selectedDates.length === 2 &&
+                    date > selectedDates[0] &&
+                    date < selectedDates[1] &&
+                    'bg-primary text-bg-light'
                   )}
                 >
                   {date ? date.getDate() : ''}
